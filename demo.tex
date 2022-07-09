@@ -1,0 +1,162 @@
+%% LyX 2.3.6.1 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[10pt,english,aspectratio=169]{beamer}
+\renewcommand{\sfdefault}{cmss}
+\usepackage{float}
+\usepackage{booktabs}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+% this default might be overridden by plain title style
+\newcommand\makebeamertitle{\frame{\maketitle}}%
+% (ERT) argument for the TOC
+\AtBeginDocument{%
+  \let\origtableofcontents=\tableofcontents
+  \def\tableofcontents{\@ifnextchar[{\origtableofcontents}{\gobbletableofcontents}}
+  \def\gobbletableofcontents#1{\origtableofcontents}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\usetheme[numbering=fraction,progressbar=frametitle,subsectionpage=progressbar,block=fill]{metropolis}
+\makeatletter
+\setlength{\metropolis@progressinheadfoot@linewidth}{1.5pt}
+\setlength{\metropolis@progressonsectionpage@linewidth}{1.5pt}
+\g@addto@macro\normalsize{%
+  \setlength\abovedisplayskip{-5pt}
+  \setlength\abovedisplayshortskip{-5pt}
+}
+\makeatother
+
+\definecolor{CrimsonRed}{HTML}{861919}
+\definecolor{Flirt}{HTML}{AA1270}
+\definecolor{Kobi}{HTML}{F8ABDB}
+\colorlet{red}{CrimsonRed}
+\colorlet{purple}{Flirt}
+\colorlet{pink}{Kobi}
+
+\setbeamercolor{progress bar}{fg=Flirt,bg=Kobi}
+\setbeamercolor{normal text}{bg=white}
+\setbeamercolor{palette primary}{%
+  bg=CrimsonRed,
+  fg=white
+}
+\setbeamercolor{titlelike}{use=normal text, fg=CrimsonRed}
+\setbeamercolor{item}{fg=CrimsonRed}
+\setbeamercolor*{block title}{bg=purple!85!fg!20}
+
+
+\usepackage{xeCJK}
+\usefonttheme{professionalfonts}
+\setbeamercovered{transparent}
+\setbeamertemplate{section in toc}[sections numbered]
+
+\geometry{papersize={17.6cm,9.9cm}}
+\bibliographystyle{abbrv}
+
+\makeatother
+
+\usepackage{babel}
+\usepackage[bibstyle=authoryear,citestyle=phys]{biblatex}
+\addbibresource{ref.bib}
+\begin{document}
+\title{TPLinkish Beamer Setup}
+\author{Allan Chain}
+\institute{School of Magicks, Peking University}
+\makebeamertitle
+
+\section{Introduction}
+\begin{frame}{How it feels}
+
+Yes, it's just a typical Metropolis look.
+\begin{description}
+\item [{Metropolis}] A modern \LaTeX Beamer theme.
+\end{description}
+\begin{minipage}[t]{0.45\columnwidth}%
+\begin{itemize}
+\item Plain
+\item Clean
+\item Mordern
+\end{itemize}
+%
+\end{minipage}\hspace*{\fill}%
+\begin{minipage}[t]{0.45\columnwidth}%
+\begin{enumerate}
+\item Plain
+\item Clean
+\item Mordern
+\end{enumerate}
+%
+\end{minipage}
+\end{frame}
+%
+\begin{frame}{Boxes}
+
+The boxes are seldomly used.
+\begin{block}{Default Block}
+
+This is a default block.
+\end{block}
+\begin{exampleblock}{Example Block}
+
+This is an example block.
+\end{exampleblock}
+\begin{alertblock}{Alert Block}
+
+This is an alert block.
+\end{alertblock}
+\end{frame}
+%
+\begin{frame}{Tables}
+
+Tables are trivial. Here is a centered table.
+
+\begin{table}[H]
+\caption{Example Table}
+
+\begin{centering}
+\begin{tabular}{cccc}
+\toprule 
+Kingdom & Horses & Wheat & Villagers\tabularnewline
+\midrule
+\midrule 
+Roma & 67 & 75 & 129\tabularnewline
+\midrule 
+Inglend & 45 & 46 & 153\tabularnewline
+\midrule 
+Endya & 31 & 34 & 83\tabularnewline
+\bottomrule
+\end{tabular}
+\par\end{centering}
+\end{table}
+\end{frame}
+%
+\begin{frame}{Colors}
+
+\textcolor{red}{Red}, \textcolor{purple}{purple}, and \textcolor{pink}{pink}
+are modified.
+
+You can use them to \textbf{\textcolor{purple}{emphasize}} some contents.
+
+\textcolor{pink}{Pink is typically use for some unimportant side notes.}
+\end{frame}
+%
+\begin{frame}{References}
+
+\nocite{*}
+\printbibliography[heading=none]
+\end{frame}
+%
+\begin{frame}[standout]
+
+{\LARGE{}Thank You!}{\LARGE\par}
+
+This is a standout page.
+
+\end{frame}
+
+\end{document}
